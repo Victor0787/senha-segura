@@ -1,1 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;700&display=swap');
 
+:root {
+    --branco: #F4F4F6;
+    --cor-de-fundo: #0B0F19;
+    --fundo-senha: #161F30;
+    --fundo-texto: #111827;
+    --borda: #6366F1; /* Roxo/Indigo moderno */
+    --borda-hover: #818CF8;
+    --inter: 'Inter', sans-serif;
+    --jetbrains: 'JetBrains Mono', monospace;
+    --radius: 12px;
+}
+
+* {
+    box-sizing: border-box;
+    transition: all 0.2s ease-in-out;
+}
+
+body {
+    color: var(--branco);
+    background-color: var(--cor-de-fundo);
+    font-family: var(--inter);
+    -webkit-font-smoothing: antialiased;
+}
+
+.titulo-principal {
+    font-family: var(--jetbrains);
+    font-weight: 700;
+    font-size: 36px;
+    letter-spacing: -1px;
+    background: linear-gradient(45deg, #6366F1, #A855F7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.titulo-secundario {
+    font-size: 20px;
+    opacity: 0.8;
+}
+
+.conteudo-titulo {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.conteudo-senha {
+    margin-top: 40px;
+    background: var(--fundo-senha);
+    padding: 32px;
+    border-radius: var(--radius);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+#campo-senha {
+    background-color: transparent;
+    border: none;
+    color: var(--branco);
+    font-family: var(--jetbrains);
+    font-weight: 700;
+    font-size: 36px;
+    width: 100%;
+    text-align: center;
+}
+
+#campo-senha:focus {
+    outline: none;
+}
+
+.conteudo {
+    max-width: 800px; /* Reduzido para ficar mais centralizado e elegante */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.parametro {
+    background-color: var(--fundo-texto);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius);
+    margin-top: 24px;
+    padding: 32px;
+}
+
+.parametro-titulo {
+    font-family: var(--jetbrains);
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+.parametro-senha__titulo {
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.parametro-coluna__senha {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.parametro-senha {
+    width: 100%;
+}
+
+.parametro-senha-botoes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--fundo-senha);
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.parametro-senha__botao {
+    background-color: transparent;
+    color: var(--branco);
+    border: none;
+    padding: 16px 24px;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.parametro-senha__botao:hover {
+    background-color: var(--borda);
+}
+
+.parametro-senha__texto {
+    padding: 16px 24px;
+    margin: 0;
+    font-size: 20px;
+    font-family: var(--jetbrains);
+    font-weight: 700;
+    min-width: 60px;
+    text-align: center;
+}
+
+label {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+}
+
+.checkbox {
+    accent-color: var(--borda); /* Muda a cor interna do checkbox nativo */
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+/* Barra de força da senha remodelada */
+.barra {
+    background-color: rgba(255, 255, 255, 0.05);
+    height: 8px;
+    width: 100%;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 16px;
+}
+
+.forca {
+    height: 100%;
+    position: static; /* Removido o posicionamento antigo antigo */
+    border-radius: 4px;
+}
+
+.fraca {
+    width: 33%;
+    background-color: #EF4444;
+}
+
+.media {
+    width: 66%;
+    background-color: #F59E0B;
+}
+
+.forte {
+    width: 100%;
+    background-color: #10B981;
+}
+
+.parametro-senha-textos {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+@media screen and (min-width: 768px) {
+    .parametro-coluna__senha {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .parametro-senha {
+        width: 45%;
+        margin: 0;
+    }
+}
